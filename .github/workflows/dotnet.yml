@@ -24,6 +24,16 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: PublishLinux
-      run: dotnet publish -r linux-x64 -p:PublishSingleFile=true --self-contained
+      run: dotnet publish -r linux-x64 -p:PublishSingleFile=true --self-contained -o artLinux
     - name: PublishWindows
-      run: dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained
+      run: dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained -o artWindows
+    - name: Archive Linux
+        uses: actions/upload-artifact@v2
+        with:
+          name: archiveLinux
+          path: artLinux
+    - name: Archive Windows
+        uses: actions/upload-artifact@v2
+        with:
+          name: archiveWindows
+          path: artWindows
