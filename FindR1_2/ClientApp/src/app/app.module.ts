@@ -13,7 +13,7 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AddressComponent } from './address/address.component';
-import { AddressDetailComponent } from './Address/address-detail/address-detail.component';
+import { AddressDetailComponent } from './address/address-detail/address-detail.component';
 
 @NgModule({
   declarations: [

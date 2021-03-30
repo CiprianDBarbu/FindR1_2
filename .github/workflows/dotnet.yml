@@ -23,3 +23,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: PublishLinux
+      run: dotnet publish -r linux-x64 -p:PublishSingleFile=true --self-contained
+    - name: PublishWindows
+      run: dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained
