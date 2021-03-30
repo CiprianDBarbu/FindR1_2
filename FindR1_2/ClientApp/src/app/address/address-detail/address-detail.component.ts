@@ -17,6 +17,7 @@ export enum ZoneType {
 export class AddressDetailComponent implements OnInit {
 
   eZoneType = ZoneType;
+  list: Address[];
 
   constructor(public service: AddressService) { }
 
@@ -24,7 +25,7 @@ export class AddressDetailComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (this.service.formData.Address_Id == 0)
+    if (this.service.formData.address_Id == 0)
       this.insertRecord(form);
     else
       this.updateRecord(form);
@@ -34,9 +35,15 @@ export class AddressDetailComponent implements OnInit {
     this.service.postAddress().subscribe(
       res => {
         this.resetForm(form);
-        this.service.refreshList();
+        this.refreshListNow();
       },
       err => { console.log(err);}
+    );
+  }
+
+  refreshListNow() {
+    this.service.refreshList().subscribe(
+      add => this.list = add
     );
   }
 
@@ -44,7 +51,7 @@ export class AddressDetailComponent implements OnInit {
     this.service.putAddress().subscribe(
       res => {
         this.resetForm(form);
-        this.service.refreshList();
+        this.refreshListNow();
       },
       err => { console.log(err);}
     );

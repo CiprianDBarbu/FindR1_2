@@ -7,10 +7,10 @@ export enum ZoneType {
 }
 
 export class Address {
-  Address_Id: number = 0;
-  Country: string = "";
-  City: string = "";
-  Zone: ZoneType;
+  address_Id: number = 0;
+  country: string = "";
+  city: string = "";
+  zone: ZoneType;
   completeAddresses: CompleteAddress[];
   applicationUsers: ApplicationUser[];
 }

@@ -34,7 +34,7 @@ import { AddressDetailComponent } from './Address/address-detail/address-detail.
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'address', component: AddressComponent },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+      { path: 'fetch-data', component: FetchDataComponent},
     ])
   ],
   providers: [

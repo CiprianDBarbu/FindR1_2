@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { tap } from 'rxjs/operators';
 import { Address } from './address.model';
 
 @Injectable({
@@ -9,7 +11,7 @@ export class AddressService {
 
   formData: Address = new Address();
   readonly baseURL = 'https://localhost:44305/api/Addresses';
-  list: Address[];
+  
 
   constructor(private http: HttpClient) { }
 
@@ -25,12 +27,20 @@ export class AddressService {
     return this.http.delete('${this.baseUrl}/${id}');
   }
 
-  refreshList() {
-    this.http.get(this.baseURL)
-      .toPromise()
-      .then(res => this.list = res as Address[]);
-    alert("A mers!!");
-    alert(typeof (this.list));
+  refreshList(): Observable<Address[]> {
+
+    return this.http.get<Address[]>(this.baseURL)
+      .pipe(
+        tap(it => {
+          window.alert('am primit adrese '+it.length);
+        })
+        )
+      ;
+
+      //.toPromise()
+      //.then(res => this.list = res as Address[]);
+    //alert("A mers!!");
+    //alert(typeof (this.list));
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from '../shared/address.model';
 import { AddressService } from '../shared/address.service';
 
 @Component({
@@ -10,14 +11,22 @@ export class AddressComponent implements OnInit {
 
   constructor(public service: AddressService) { }
 
+  list: Address[];
+
   ngOnInit() {
     alert("TEST BEFORE INIT!");
-    this.service.refreshList();
+    this.refreshListNow();
     alert("TEST AFTER INIT!");
   }
 
   populateForm(selectedRecord) {
     this.service.formData = Object.assign({}, selectedRecord);
+  }
+
+  refreshListNow() {
+    this.service.refreshList().subscribe(
+      add => this.list = add
+    );
   }
 
   onDelete(id: number) {

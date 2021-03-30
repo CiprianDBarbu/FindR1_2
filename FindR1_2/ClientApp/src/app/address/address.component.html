@@ -16,10 +16,10 @@
             <th></th>
           </tr>
         </thead>
-        <tr *ngFor="let a of service.list">
-          <td (click)="populateForm(a)">{{a.Country}}</td>
-          <td (click)="populateForm(a)">{{a.City}}</td>
-          <td (click)="populateForm(a)">{{a.Zone}}</td>
+        <tr *ngFor="let a of list">
+          <td (click)="populateForm(a)">{{a.country}}</td>
+          <td (click)="populateForm(a)">{{a.city}}</td>
+          <td (click)="populateForm(a)">{{a.zone}}</td>
           <td>
             <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(a.Address_Id)"></i>
           </td>
