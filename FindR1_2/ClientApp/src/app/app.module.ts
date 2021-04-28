@@ -14,6 +14,9 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AddressComponent } from './address/address.component';
 import { AddressDetailComponent } from './address/address-detail/address-detail.component';
+import { HousingComponent } from './housing/housing.component';
+import { HousingFormComponent } from './housing/housing-form/housing-form.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { AddressDetailComponent } from './address/address-detail/address-detail.
     CounterComponent,
     FetchDataComponent,
     AddressComponent,
-    AddressDetailComponent
+    AddressDetailComponent,
+    HousingComponent,
+    HousingFormComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,7 +38,9 @@ import { AddressDetailComponent } from './address/address-detail/address-detail.
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'user', component: UserComponent},
       { path: 'address', component: AddressComponent },
+      { path: 'housing', component: HousingComponent},
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent},
     ])

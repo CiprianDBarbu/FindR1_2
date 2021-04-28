@@ -1,0 +1,36 @@
+<div class="jumbotron py-3">
+  <h1 class="display-4 text-center">Housings Register</h1>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <app-housing-form></app-housing-form>
+  </div>
+  <div class="col-md-8">
+    <div>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>City</th>
+            <th>Street</th>
+            <th>Floor</th>
+            <th>Price/Month(Lei)</th>
+            <th>Number of rooms</th>
+            <th>Taken</th>
+            <th></th>
+          </tr>
+        </thead>
+          <tr *ngFor="let h of housingsList; let i = index;">
+            <td (click)="populateForm(h)">{{adressesList[completeAddressesList[i].addressId-1].city}}</td>
+            <td (click)="populateForm(h)">{{completeAddressesList[i].street}}</td>
+            <td (click)="populateForm(h)">{{completeAddressesList[i].floor}}</td>
+            <td (click)="populateForm(h)">{{h.price}}</td>
+            <td (click)="populateForm(h)">{{h.noOfRooms}}</td>
+            <td (click)="populateForm(h)">{{h.isTaken}}</td>
+            <td>
+              <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(h.housing_Id)"></i>
+            </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>

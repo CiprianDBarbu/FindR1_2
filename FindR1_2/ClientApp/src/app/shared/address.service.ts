@@ -20,11 +20,11 @@ export class AddressService {
   }
 
   putAddress() {
-    return this.http.put('${this.baseURL}/${this.formData.Address_Id}', this.formData);
+    return this.http.put(`${this.baseURL}/${this.formData.address_Id}`, this.formData);
   }
 
   deleteAddress(id: number) {
-    return this.http.delete('${this.baseUrl}/${id}');
+    return this.http.delete(this.baseURL + '/' + id.toString());
   }
 
   refreshList(): Observable<Address[]> {
@@ -34,13 +34,11 @@ export class AddressService {
         tap(it => {
           window.alert('am primit adrese '+it.length);
         })
-        )
-      ;
+        );
+  }
 
-      //.toPromise()
-      //.then(res => this.list = res as Address[]);
-    //alert("A mers!!");
-    //alert(typeof (this.list));
+  getAddressById(id: number) {
+    return this.http.get<Address>(`${this.baseURL}/${id}`);
   }
 
 }

@@ -22,5 +22,7 @@ namespace FindR1_2.Controllers
             var parameters = ClientRequestParametersProvider.GetClientParameters(HttpContext, clientId);
             return Ok(parameters);
         }
+
+
     }
 }

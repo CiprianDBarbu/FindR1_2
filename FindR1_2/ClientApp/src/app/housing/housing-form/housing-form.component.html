@@ -1,0 +1,38 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="housing_Id" [value]="hs.formData.housing_Id" />
+  <div class="form-group">
+    <div class="form-group">
+      <label>ZONE</label>
+      <br />
+      <select id="addressId" name="addressId" [(ngModel)]="cas.formData.addressId">
+        <option *ngFor="let address of addressesList" [value]="address.address_Id">
+          {{address.country}}, {{address.city}}, {{address.zone}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>STREET</label>
+      <input class="form-control form-control-lg" placeholder="Str.Vacaresti nr.232" name="street" #street="ngModel"
+             [(ngModel)]="cas.formData.street" required [class.invalid]="street.invalid &#038;&#038; street.touched" />
+    </div>
+    <div class="form-group">
+      <label>FLOOR</label>
+      <input class="form-control form-control-lg" placeholder="Parter, 1" name="floor" #floor="ngModel"
+             [(ngModel)]="cas.formData.floor" required [class.invalid]="floor.invalid &#038;&#038; floor.touched" />
+    </div>
+    <div class="form-group">
+      <label>PRICE</label>
+      <input class="form-control form-control-lg" placeholder="900" name="price" #price="ngModel"
+             [(ngModel)]="hs.formData.price" required [class.invalid]="price.invalid &#038;&#038; price.touched" />
+    </div>
+    <div class="form-group">
+      <label>NO. OF ROOMS</label>
+      <input class="form-control form-control-lg" placeholder="2" name="noOfRooms" #noOfRooms="ngModel"
+             [(ngModel)]="hs.formData.noOfRooms" required [class.invalid]="noOfRooms.invalid &#038;&#038; noOfRooms.touched" />
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">ADD HOUSING</button>
+    </div>
+    </div>
+</form>

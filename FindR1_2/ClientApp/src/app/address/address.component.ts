@@ -14,19 +14,19 @@ export class AddressComponent implements OnInit {
   list: Address[];
 
   ngOnInit() {
-    alert("TEST BEFORE INIT!");
+    //alert("TEST BEFORE INIT!");
     this.refreshListNow();
-    alert("TEST AFTER INIT!");
-  }
-
-  populateForm(selectedRecord) {
-    this.service.formData = Object.assign({}, selectedRecord);
+    //alert("TEST AFTER INIT!");
   }
 
   refreshListNow() {
     this.service.refreshList().subscribe(
       add => this.list = add
     );
+  }
+
+  populateForm(selectedRecord) {
+    this.service.formData = Object.assign({}, selectedRecord);
   }
 
   onDelete(id: number) {

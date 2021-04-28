@@ -14,7 +14,8 @@
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Input.ProfilePicture"></label>
-                <input asp-for="Input.ProfilePicture" type="file" id="file1" name="file1" />
+                <input asp-for="Input.ProfilePicture" type="file" accept=".png, .jpg, .jpeg, .gif, .tif" id="file1" name="file1" />
+                <img id="profilePicture" style="width:250px;height:250px; object-fit:cover" src="data:image/*; base64,@(Convert.ToBase64String(Model.Input.ProfilePicture))">
             </div>
             <div class="form-group">
                 <label asp-for="Input.FirstName"></label>

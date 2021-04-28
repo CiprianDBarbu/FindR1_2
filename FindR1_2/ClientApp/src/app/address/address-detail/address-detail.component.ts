@@ -16,7 +16,7 @@ export enum ZoneType {
 })
 export class AddressDetailComponent implements OnInit {
 
-  eZoneType : ZoneType;
+  eZoneType = ZoneType;
   list: Address[];
 
   constructor(public service: AddressService) { }

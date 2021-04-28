@@ -1,11 +1,11 @@
 <header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3"
   >
     <div class="container">
 
       <a class="navbar-brand" [routerLink]="['/']">
-        <img class="rounded" width="50" height="40" src="assets/findR.png" />
+        <img class="rounded-circle" width="50" height="50"  src="assets/findR.ico" />
         FindR!
       </a>
       <button
@@ -33,19 +33,16 @@
             <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/address']"></a>
+            <a class="nav-link text-dark" [routerLink]="['/user']">Users</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
+            <a class="nav-link text-dark" [routerLink]="['/address']">Addresses</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
+            <a class="nav-link text-dark" [routerLink]="['/housing']">Housings</a>
           </li>
         </ul>
+
       </div>
     </div>
   </nav>
