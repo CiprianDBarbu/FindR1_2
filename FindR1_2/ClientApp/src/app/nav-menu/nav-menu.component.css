@@ -1,9 +1,9 @@
 nav{
-    background-color: rgba(211,165,118,1);
+    background-color: rgb(51,50,49);
 }
 
 .container {
-  background-color: rgba(211,165,118,1);
+  background-color: rgb(51,50,49);
 }
 
 a.navbar-brand {
@@ -28,4 +28,3 @@ html {
 ul{
     margin: auto;
 }
-

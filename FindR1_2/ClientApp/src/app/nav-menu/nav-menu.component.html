@@ -1,10 +1,10 @@
 <header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow "
   >
     <div class="container">
 
-      <a class="navbar-brand" [routerLink]="['/']">
+      <a class="navbar-brand text-light" [routerLink]="['/']">
         <img class="rounded-circle" width="50" height="50"  src="assets/findR.ico" />
         FindR!
       </a>
@@ -30,16 +30,16 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-light" [routerLink]="['/']">Home</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/user']">Users</a>
+            <a class="nav-link text-light" [routerLink]="['/user']">Users</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/address']">Addresses</a>
+            <a class="nav-link text-light" [routerLink]="['/address']">Addresses</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/housing']">Housings</a>
+            <a class="nav-link text-light" [routerLink]="['/housing']">Housings</a>
           </li>
         </ul>
 
