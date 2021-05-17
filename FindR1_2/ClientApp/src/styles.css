@@ -28,15 +28,6 @@ code {
     font-weight: 300;
   }
 
-thead th {
-  font-weight: 400;
-}
-
-table tr:hover {
-  background-color: #fffbf2;
-  cursor: pointer;
-}
-
 /*for invalid form controls*/
 input.invalid {
   border-color: red;
