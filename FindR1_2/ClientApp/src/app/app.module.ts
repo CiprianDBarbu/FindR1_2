@@ -18,6 +18,7 @@ import { HousingComponent } from './housing/housing.component';
 import { HousingFormComponent } from './housing/housing-form/housing-form.component';
 import { UserComponent } from './user/user.component';
 import { FooterComponent } from './footer/footer.component';
+import { FindHousingComponent } from './find-housing/find-housing.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FooterComponent } from './footer/footer.component';
     HousingFormComponent,
     UserComponent,
     FooterComponent,
+    FindHousingComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
