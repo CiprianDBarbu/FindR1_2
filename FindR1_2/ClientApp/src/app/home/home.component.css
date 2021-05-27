@@ -23,9 +23,16 @@
 
 
 .bg-image-button {
+  transition: box-shadow .3s;
+
   position: relative;
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: contain;
   height: 200px;
+}
+
+.bg-image-button:hover{
+    box-shadow: 0 0 11px rgb(33,33,33);
+    cursor: pointer;
 }

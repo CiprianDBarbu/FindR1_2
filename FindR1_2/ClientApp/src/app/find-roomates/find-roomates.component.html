@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Find the best roomate for you!</h2>
+  <p>Swipe through people that you like the best!</p>
+</div>
+<div class="bg-image container">
+  <img *ngIf="actualUserDisplayed.profilePicture!=null; else elseBlock" src="data:image/jpeg;base64,{{actualUserDisplayed.profilePicture}}"
+       class="mw-100 mx-auto d-block" />
+  <ng-template #elseBlock>
+    <img src="https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/5/6/2/3/223265-6-eng-GB/Lessonia2_news_large.jpg"
+         class="mw-100 mx-auto d-block" />
+  </ng-template>
+  <div class="mask text-dark">
+    <div class="position-absolute bottom-0 start-0">
+      <h3>{{actualUserDisplayed.firstName}} {{actualUserDisplayed.lastName}}</h3>
+      <p>{{actualUserDisplayed.age}}</p>
+      <p *ngIf="actualUserDisplayed.gender === 0; else elseP">Male</p>
+      <ng-template #elseP>
+        <p>Female</p>
+      </ng-template>
+      <p>{{actualUserDisplayed.details}}</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" (click)="nextUser()" width="65" height="65" fill="rgb(211,165,118)" class="bi bi-caret-right-fill position-absolute top-50 end-0 translate-middle-y" viewBox="0 0 16 16">
+      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+    </svg>
+    
+
+    <button class="btn m-2 position-absolute bottom-0 end-0">ADD FRIEND!</button>
+  </div>
+</div>

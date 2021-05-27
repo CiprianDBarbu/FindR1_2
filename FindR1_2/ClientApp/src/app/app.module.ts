@@ -19,6 +19,7 @@ import { HousingFormComponent } from './housing/housing-form/housing-form.compon
 import { UserComponent } from './user/user.component';
 import { FooterComponent } from './footer/footer.component';
 import { FindHousingComponent } from './find-housing/find-housing.component';
+import { FindRoomatesComponent } from './find-roomates/find-roomates.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FindHousingComponent } from './find-housing/find-housing.component';
     UserComponent,
     FooterComponent,
     FindHousingComponent,
+    FindRoomatesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,7 +48,9 @@ import { FindHousingComponent } from './find-housing/find-housing.component';
       { path: 'address', component: AddressComponent },
       { path: 'housing', component: HousingComponent},
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent},
+      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'find-roomates', component: FindRoomatesComponent },
+      { path: 'find-housing', component: FindHousingComponent},
     ])
   ],
   providers: [
