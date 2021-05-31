@@ -3,4 +3,5 @@ export class Housing {
   price: number;
   noOfRooms: number;
   isTaken: boolean;
+  advertisementId: number;
 }

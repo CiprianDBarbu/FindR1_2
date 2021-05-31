@@ -5,6 +5,7 @@ export enum GenderType {
 }
 
 export class ApplicationUser {
+  id: string;
   profilePicture: HTMLImageElement;
   firstName: string;
   lastName: string;

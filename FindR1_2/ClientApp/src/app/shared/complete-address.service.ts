@@ -30,7 +30,7 @@ export class CompleteAddressService {
     return this.http.get<CompleteAddress[]>(this.baseURL)
       .pipe(
         tap(it => {
-          window.alert(`Received ${it.length} complete addresses!`);
+          //window.alert(`Received ${it.length} complete addresses!`);
         })
       );
   }

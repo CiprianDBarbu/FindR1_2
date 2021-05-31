@@ -32,7 +32,7 @@ export class AddressService {
     return this.http.get<Address[]>(this.baseURL)
       .pipe(
         tap(it => {
-          window.alert('am primit adrese '+it.length);
+          //window.alert('am primit adrese '+it.length);
         })
         );
   }

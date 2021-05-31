@@ -20,6 +20,7 @@ import { UserComponent } from './user/user.component';
 import { FooterComponent } from './footer/footer.component';
 import { FindHousingComponent } from './find-housing/find-housing.component';
 import { FindRoomatesComponent } from './find-roomates/find-roomates.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,10 @@ import { FindRoomatesComponent } from './find-roomates/find-roomates.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'find-roomates', component: FindRoomatesComponent },
       { path: 'find-housing', component: FindHousingComponent},
-    ])
+    ]),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC8E8P3h3NcvFGcAFUZ6hvogFLTtv9IL84'
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }

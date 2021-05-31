@@ -1,1 +1,43 @@
-<p>find-housing works!</p>
+<div>
+  <agm-map [latitude]="45.801895" [longitude]="24.761837" [zoom]="7">
+    <agm-marker *ngFor="let m of completeAddressList; let i = index;" [latitude]="m.latitude" [longitude]="m.longitude">
+      <agm-info-window>
+        <p><strong>{{m.street}}</strong></p>
+        floor: {{m.floor}}
+        <br />
+        number of rooms: {{housingsList[i].noOfRooms}}
+        <br />
+        price: {{housingsList[i].price}} lei/ month
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>
+<div>
+  <h3>List of public announcements</h3>
+  <p>Lista de anunturi</p>
+  <div *ngFor="let a of advertisementsList; let i = index;" class="container border border-3 rounded position-relative mb-5">
+    <div class="row">
+      <div class="col-4">
+        <p class="fs-4 fw-bold">Bucuresti, {{findHousing(a.advertisement_Id).noOfRooms}} rooms</p>
+        <p>Price: {{findHousing(a.advertisement_Id).price}} lei / month</p>
+        <p>Complete address: {{findCompleteAddress(findHousing(a.advertisement_Id).housing_Id).street}}, {{findCompleteAddress(findHousing(a.advertisement_Id).housing_Id).floor}}</p>
+        <p>Check-in date: {{a.CheckInDate}}</p>
+        <p>Posted by: {{findUser(a.profileId)}}</p>
+      </div>
+      <div class="col-8">
+        <agm-map style="height:195px"
+                 [latitude]="45.801895"
+                 [longitude]="24.761837"
+                 [disableDefaultUI]="true"
+                 [zoom] ="6"
+                 [mapDraggable]="false">
+          <agm-marker [latitude]="completeAddressList[i+20].latitude" [longitude]="completeAddressList[i+20].longitude">
+            
+          </agm-marker>
+        </agm-map>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

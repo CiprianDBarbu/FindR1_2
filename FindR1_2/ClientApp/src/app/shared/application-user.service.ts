@@ -19,7 +19,7 @@ export class ApplicationUserService {
     return this.http.get<ApplicationUser[]>(this.baseURL)
       .pipe(
         tap(it => {
-          window.alert('am primit useri ' + it.length);
+          //window.alert('am primit useri ' + it.length);
       })
       );
   }

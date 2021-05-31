@@ -30,7 +30,7 @@ export class HousingService {
     return this.http.get<Housing[]>(this.baseURL)
       .pipe(
         tap(it => {
-          window.alert(`Received ${it.length} housings!`);
+          //window.alert(`Received ${it.length} housings!`);
         })
       );
   }
