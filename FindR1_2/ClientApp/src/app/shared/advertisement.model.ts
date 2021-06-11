@@ -6,5 +6,5 @@ export class Advertisement {
   profileId: string;
   profile: ApplicationUser;
   housing: Housing;
-  checkInDate: Date;
+  checkInDate: string;
 }

@@ -3,5 +3,11 @@ agm-map{
 }
 
 div .border{
-    height: 200px;
+    height: 215px;
+}
+
+.btn:hover {
+  box-shadow: 0 0 5px rgb(33,33,33);
+  background-color: rgb(211,165,118);
+  color: white;
 }

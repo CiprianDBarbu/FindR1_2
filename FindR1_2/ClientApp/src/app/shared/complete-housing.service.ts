@@ -31,7 +31,6 @@ export class CompleteHousingService {
 
         for (var i = 1; i <= this.completeAddressesList.length; i++) {
           var housing = new CompleteHousing();
-          alert("inceput de for");
           housing.price = this.housingsList[i].price;
           housing.noOfRooms = this.housingsList[i].noOfRooms;
           housing.isTaken = this.housingsList[i].isTaken;

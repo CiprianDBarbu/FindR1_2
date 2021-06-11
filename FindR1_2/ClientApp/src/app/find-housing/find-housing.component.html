@@ -14,30 +14,41 @@
 </div>
 <div>
   <h3>List of public announcements</h3>
-  <p>Lista de anunturi</p>
+  <p>Watch what other people post! Maybe you can find the perfect room and roommate for you!</p>
+  <div class="container">
+    <p>You can also post <strong>one</strong> announcement, if don't find something you like!</p>
+    <button class="btn mb-1">POST AN ADD! 0/1</button>
+  </div>
   <div *ngFor="let a of advertisementsList; let i = index;" class="container border border-3 rounded position-relative mb-5">
     <div class="row">
       <div class="col-4">
         <p class="fs-4 fw-bold">Bucuresti, {{findHousing(a.advertisement_Id).noOfRooms}} rooms</p>
         <p>Price: {{findHousing(a.advertisement_Id).price}} lei / month</p>
         <p>Complete address: {{findCompleteAddress(findHousing(a.advertisement_Id).housing_Id).street}}, {{findCompleteAddress(findHousing(a.advertisement_Id).housing_Id).floor}}</p>
-        <p>Check-in date: {{a.CheckInDate}}</p>
-        <p>Posted by: {{findUser(a.profileId)}}</p>
+        <p>Check-in date: {{a.checkInDate.substring(0, 10)}}</p>
+        <p>Posted by: {{findUser(a.profileId)}} <button class="btn btn-outline-dark btn-sm">ADD FRIEND!</button></p>
       </div>
       <div class="col-8">
-        <agm-map style="height:195px"
+        <agm-map style="height:209px"
                  [latitude]="45.801895"
                  [longitude]="24.761837"
                  [disableDefaultUI]="true"
-                 [zoom] ="6"
+                 [zoom]="6"
                  [mapDraggable]="false">
           <agm-marker [latitude]="completeAddressList[i+20].latitude" [longitude]="completeAddressList[i+20].longitude">
-            
+
           </agm-marker>
         </agm-map>
       </div>
     </div>
   </div>
+  <nav aria-label="Page navigation" class="container">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>
 </div>
 
 <app-footer></app-footer>
