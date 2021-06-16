@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FindHousingComponent } from './find-housing/find-housing.component';
 import { FindRoomatesComponent } from './find-roomates/find-roomates.component';
 import { AgmCoreModule } from '@agm/core';
+import { IfRoleDirective } from './if-role.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AgmCoreModule } from '@agm/core';
     FooterComponent,
     FindHousingComponent,
     FindRoomatesComponent,
+    IfRoleDirective,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -436,6 +436,14 @@ namespace FindR1_2.Data
             new Advertisement { Advertisement_Id = 3, ProfileId = applicationUser4.Id, CheckInDate = new DateTime(2021, 10, 1)}
             );
             #endregion
+
+            #region Roles seed
+            builder.Entity<IdentityRole>()
+                .HasData(
+            new IdentityRole { Id = "fab4fac1-c546-41de-aebc-a14da6895711", Name = "User", NormalizedName = "USER", ConcurrencyStamp = "1"},
+            new IdentityRole { Id = "c7b013f0-5201-4317-abd8-c211f91b7330", Name = "Administrator", NormalizedName = "ADMINISTRATOR", ConcurrencyStamp = "2" }
+                );
+            #endregion
         }
     }
 }
